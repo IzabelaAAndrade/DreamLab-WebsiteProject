@@ -1,0 +1,82 @@
+/* Configurações Gerais */
+
+html, body{
+    margin: 0%;
+}
+
+/* Configurações da Barra Superior ou Header */
+
+/** Configurações Gerais Header-Footer **/
+header, footer{
+    background-image: linear-gradient(120deg, #E0A6DD, #98C9D4);
+    margin: 0%;
+    height: 25vh;
+    font-family: 'Raleway', sans-serif;
+}
+
+#logo-superior, #logo-inferior {
+    width: 10%;
+    margin-left: 3%;
+    float: left;
+}
+/** Configurações Gerais Header-Footer **/
+
+
+
+/* Menu ou Navegação */
+
+#menu ul{
+    margin: 0%;
+    padding: 3% 3% 0% 40%;
+}
+
+#menu li{
+    display: inline-block;
+    padding: 2%;
+}
+
+#menu li:hover{
+    background-color: white;
+    color: #E0A6DD;
+    transition: 2ms ease;
+}
+#menu li:hover a{
+    color: #E0A6DD;
+}
+
+#menu a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Menu ou Navegação */
+
+
+/* Configurações do Footer (Barra Inferior) */
+
+footer{
+    color: white;
+    height: 35vh;
+}
+
+footer h3{
+    font-size: .9em;
+}
+
+footer p{
+    font-size: .7em;
+}
+
+#conteudo-footer{
+    padding: 3% 0% 0% 20%;
+}
+
+#logo-inferior{
+    width: 15%;
+}
+
+/* Conteúdo geral - Provisório */
+
+h1{
+    font-family: 'Raleway', sans-serif;
+}

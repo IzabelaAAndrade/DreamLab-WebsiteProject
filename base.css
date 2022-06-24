@@ -75,8 +75,149 @@ footer p{
     width: 15%;
 }
 
-/* Conteúdo geral - Provisório */
 
-h1{
+/* Ajustes texto principal */
+
+.section-clara, .section-escura{
+    padding: 5% 10%;
+}
+
+.titulos-primarios-1, .paragrafos-primarios-1{
+    text-align: center;
+}
+
+.titulos-primarios-1 {
+    color: #B77FB4 ;
+}
+
+.titulos-primarios-1, .titulos-primarios-2, #titulo-maior{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.paragrafos-primarios-1, .btn-escuro, .subtitulo-claro, #comunidade-valores p{
     font-family: 'Raleway', sans-serif;
 }
+
+.paragrafos-primarios-1{
+    font-size: 1em;
+}
+
+/* Configuração geral dos botões */
+
+.btn-escuro, .btn-claro{
+    border:none;
+    display: block;
+    margin: 0 auto;
+    padding: 1% 2%;
+    cursor:pointer;
+    transition: background-color, transform 300ms linear;
+}
+
+.btn-escuro{
+    background-color: #B77FB4;
+    color: white;
+
+}
+
+.btn-escuro:hover{
+    background-color: #98C9D4;
+    color: white;
+    transform: scale(1.1)
+}
+
+.btn-claro{
+    background-color: white;
+    color: #B77FB4;
+}
+
+.btn-claro:hover{
+    background-color: #98C9D4;
+    color: white;
+    transform: scale(1.1)
+}
+
+.section-escura{
+    background-color: #B77FB4;
+    color: white;
+}
+
+/* Seção - Linhas de Pesquisa */
+
+.colunas-exp{
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+    padding: 1%;
+}
+
+.divisor-linhasp{
+    width: 15vw;
+    height: .4vh;
+    background-color: white;
+    border: none;
+}
+
+#organiza-colunas{
+    display: block;
+    margin: 0% auto;
+}
+
+.titulos-primarios-2{
+    color: white;
+    text-align: center;
+}
+
+/* Seção mini-apresentação */
+.subtitulo-claro{
+    color: #7A7A7A;
+    letter-spacing: 2px;
+    font-size: .8em;
+}
+
+#titulo-maior{
+    color: #B77FB4;
+    font-size: 2.5em;
+}
+
+#mini-hr{
+    width: 5vw;
+    height: .3vh;
+    background-color: #B77FB4;
+    border: none;
+    margin: 0%;
+}
+
+#textos-ap{
+    padding: 0 0 0 0;
+}
+
+#comunidade-valores img{
+    width: 20vw;
+    transition: transform 300ms linear;
+}
+
+#comunidade-valores img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#comunidade-valores p{
+    color: #7A7A7A;
+
+}
+
+.texto-foto-ap{
+    display: inline-block;
+    padding: 3%;
+}
+
+.tf{
+    width: 25%;
+}
+
+#textos-ap{
+    width: 35%;
+}
+

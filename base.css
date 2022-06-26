@@ -25,26 +25,25 @@ header, footer{
 
 /* Menu ou Navegação */
 
-#menu ul{
+.menu ul{
     margin: 0%;
     padding: 3% 3% 0% 40%;
 }
 
-#menu li{
+.menu li{
     display: inline-block;
     padding: 2%;
 }
 
-#menu li:hover{
+.menu li:hover{
     background-color: white;
-    color: #E0A6DD;
     transition: 2ms ease;
 }
-#menu li:hover a{
+.menu .link-trad:hover a, .dropdown:hover .btn-dropdown{
     color: #E0A6DD;
 }
 
-#menu a {
+.menu a {
     color: white;
     text-decoration: none;
 }
@@ -221,3 +220,55 @@ footer p{
     width: 35%;
 }
 
+/* Ajuste Ícones Sociais */
+.imgs-sociais{
+    width: 2vw;
+    padding: 0 .2vw 0 0;
+}
+
+/* Menu Dropdown */
+
+.conteudo-dropdown{
+    display: none;
+    position: absolute;
+    margin-top: 18%;
+    min-width: 12vw;
+    color: white;
+}
+
+.conteudo-dropdown a{
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 5% 20%;
+    background-color: #B77FB4;
+    opacity: .8;
+    font-size: .9em;
+
+}
+
+.dropdown:hover .conteudo-dropdown{
+    display: block;
+}
+
+.conteudo-dropdown a{
+    color: white;
+}
+
+.conteudo-dropdown a:hover{
+    background-color: #98C9D4 ;
+}
+
+/* Ajustes carousel */
+
+.c-img{
+    height: 120vh;
+    width: 100%;
+    z-index: 0;
+}
+
+.filter{
+    z-index: 1;
+    background-color: #B77FB4;
+    opacity: .5;
+}

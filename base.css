@@ -259,16 +259,3 @@ footer p{
     background-color: #98C9D4 ;
 }
 
-/* Ajustes carousel */
-
-.c-img{
-    height: 120vh;
-    width: 100%;
-    z-index: 0;
-}
-
-.filter{
-    z-index: 1;
-    background-color: #B77FB4;
-    opacity: .5;
-}

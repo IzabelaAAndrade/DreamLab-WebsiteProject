@@ -11,7 +11,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Raleway:wght@100;400&display=swap" rel="stylesheet">
         <!-- Inclusão de Arquivos CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.3/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
         <link rel="stylesheet" href="base.css">
+        
     </head>
     <body>
         <header>
@@ -41,6 +43,37 @@
             </nav>
         </header>
         <main>
+            <div class="conteudo-slider">
+                <h2>Bem vindo ao DREAM Lab!</h2>
+                <h4><b>D</b>rug <b>Re</b>sistance <b>a</b>nd <b>M</b>utagenesis Lab</h4>
+                <button class="btn-escuro">CONHEÇA</button>
+            </div>
+            <div id="filtro">
+
+            </div>
+            <div class="swiffy-slider slider-item-ratio-16x9 slider-item-nogap slider-nav-autoplay" data-slider-nav-autoplay-interval="3500">
+                <ul class="slider-container">
+                    <li class="slide-visible">
+                        <img src="imgs/carousel-home/microscopio.jpg" class="imgs-slider"/>
+                    </li>
+                    <li>
+                        <img src="imgs/carousel-home/pipetando.jpg" class="imgs-slider"/>
+                    </li>
+                    <li>
+                        <img src="imgs/carousel-home/celulas.jpg" class="imgs-slider"/>
+                    </li>
+                </ul>
+            
+                <button type="button" class="slider-nav"></button>
+                <button type="button" class="slider-nav slider-nav-next"></button>
+            
+                <ul class="slider-indicators">
+                    <li class=""></li>
+                    <li class=""></li>
+                    <li class="active"></li>
+                </ul>
+            </div>
+            
             <section class="section-clara">
                 <h1 class="titulos-primarios-1">O laboratório</h1>
                 <p class="paragrafos-primarios-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam augue risus, rutrum sed nisl eu, ultrices ullamcorper mauris. Fusce consectetur vel purus at tempor. Aliquam vel ante malesuada, porta lacus sed, feugiat ante. Cras porttitor urna lacus, quis mollis mi posuere sed. Ut placerat risus et nulla ultricies, id posuere sapien rutrum. Mauris dui nunc, ornare in fringilla quis, commodo at urna. Curabitur in justo sed diam maximus aliquet et quis lectus. Suspendisse potenti.</p>
@@ -87,6 +120,7 @@
             </section>
         </main>
 
+
         <footer>
             <img src="imgs/logo-branca.png" alt="Logo DREAM Lab Unifesp" id="logo-inferior"/>
             <div id="conteudo-footer">
@@ -106,5 +140,6 @@
                 </div>
             </div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.3/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
     </body>
 </html>

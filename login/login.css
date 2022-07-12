@@ -1,0 +1,67 @@
+.form-central{
+    display: block;
+    width: 40%;
+    margin: 2% auto 0 auto;
+    font-family: 'Raleway', sans-serif;
+}
+
+.form-central label{
+    display: block;
+    text-align: left;
+    margin: 4% 0;
+}
+
+.form-central input, .forms-central select, #categoria{
+    width: 100%;
+    height: 3%;
+    padding: 3%;
+}
+
+.form-central .btn-escuro{
+    margin: 4% 0;
+    width: 107%;
+}
+
+
+.form-central .btn-escuro:hover{
+    transform: scale(1);
+}
+
+#infos-login{
+    font-family: 'Raleway', sans-serif;
+    font-size: .8em;
+    color: #7A7A7A;
+    margin: 2% 0 5% 0;
+    text-align: center;
+}
+
+.campos-log a {
+    text-decoration: none;
+    color: #B77FB4;
+    font-size: .8em;
+    position: relative;
+    top: -2vh;
+}
+
+.campos-log a:hover{
+    color: #98C9D4;
+}
+
+#categoria{
+    width: 107%;
+    height: 1%;
+}
+
+#descricao, #img-pesquisador, #publicacoes{
+    width: 107%;
+    font-family: 'Raleway', sans-serif;
+}
+
+.pags-log{
+    margin-top: -3%;
+}
+
+#img-pesquisador{
+    margin-left: 0;
+    padding-left: 0;
+}

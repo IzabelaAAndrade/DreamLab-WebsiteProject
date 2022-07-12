@@ -1,0 +1,316 @@
+/* Configurações Gerais */
+
+html, body{
+    margin: 0%;
+    overflow-x: hidden;
+}
+
+/* Configurações da Barra Superior ou Header */
+
+/** Configurações Gerais Header-Footer **/
+header, footer{
+    background-image: linear-gradient(120deg, #E0A6DD, #98C9D4);
+    margin: 0%;
+    height: 25vh;
+    font-family: 'Raleway', sans-serif;
+}
+
+#logo-superior, #logo-inferior {
+    width: 10%;
+    margin-left: 3%;
+    float: left;
+}
+/** Configurações Gerais Header-Footer **/
+
+
+
+/* Menu ou Navegação */
+
+.menu ul{
+    margin: 0%;
+    padding: 3% 3% 0% 40%;
+}
+
+.menu li{
+    display: inline-block;
+    padding: 2%;
+}
+
+.menu li:hover{
+    background-color: white;
+    transition: 2ms ease;
+}
+.menu .link-trad:hover a, .dropdown:hover .btn-dropdown{
+    color: #E0A6DD;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Menu ou Navegação */
+
+
+/* Configurações do Footer (Barra Inferior) */
+
+footer{
+    color: white;
+    height: 35vh;
+}
+
+footer h3{
+    font-size: .9em;
+}
+
+footer p{
+    font-size: .7em;
+}
+
+#conteudo-footer{
+    padding: 3% 0% 0% 20%;
+}
+
+#logo-inferior{
+    width: 15%;
+}
+
+
+/* Ajustes texto principal */
+
+.section-clara, .section-escura{
+    padding: 5% 10%;
+}
+
+.titulos-primarios-1, .paragrafos-primarios-1, .titulos-secundarios-1{
+    text-align: center;
+}
+
+.titulos-primarios-1 {
+    color: #B77FB4 ;
+}
+
+.titulos-primarios-1, .titulos-primarios-2, #titulo-maior, .conteudo-slider h2{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.paragrafos-primarios-1, .btn-escuro, .subtitulo-claro, #comunidade-valores p, .titulos-secundarios-1{
+    font-family: 'Raleway', sans-serif;
+}
+
+.paragrafos-primarios-1{
+    font-size: 1em;
+}
+
+/* Configuração geral dos botões */
+
+.btn-escuro, .btn-claro{
+    border:none;
+    display: block;
+    margin: 0 auto;
+    padding: 1% 2%;
+    cursor:pointer;
+    transition: background-color, transform 300ms linear;
+}
+
+.btn-escuro{
+    background-color: #B77FB4;
+    color: white;
+
+}
+
+.btn-escuro:hover{
+    background-color: #98C9D4;
+    color: white;
+    transform: scale(1.1)
+}
+
+.btn-claro{
+    background-color: white;
+    color: #B77FB4;
+}
+
+.btn-claro:hover{
+    background-color: #98C9D4;
+    color: white;
+    transform: scale(1.1)
+}
+
+.section-escura{
+    background-color: #B77FB4;
+    color: white;
+}
+
+/* Seção - Linhas de Pesquisa */
+
+.colunas-exp{
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+    padding: 1%;
+}
+
+.divisor-linhasp{
+    width: 15vw;
+    height: .4vh;
+    background-color: white;
+    border: none;
+}
+
+#organiza-colunas{
+    display: block;
+    margin: 0% auto;
+}
+
+.titulos-primarios-2{
+    color: white;
+    text-align: center;
+}
+
+/* Seção mini-apresentação */
+.subtitulo-claro{
+    color: #7A7A7A;
+    letter-spacing: 2px;
+    font-size: .8em;
+}
+
+#titulo-maior{
+    color: #B77FB4;
+    font-size: 2.5em;
+}
+
+#mini-hr{
+    width: 5vw;
+    height: .3vh;
+    background-color: #B77FB4;
+    border: none;
+    margin: 0%;
+}
+
+#textos-ap{
+    padding: 0 0 0 0;
+}
+
+#comunidade-valores img{
+    width: 20vw;
+    transition: transform 300ms linear;
+}
+
+#comunidade-valores img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#comunidade-valores p{
+    color: #7A7A7A;
+
+}
+
+.texto-foto-ap{
+    display: inline-block;
+    padding: 3%;
+}
+
+.tf{
+    width: 25%;
+}
+
+#textos-ap{
+    width: 35%;
+}
+
+/* Ajuste Ícones Sociais */
+.imgs-sociais{
+    width: 2vw;
+    padding: 0 .2vw 0 0;
+}
+
+/* Menu Dropdown */
+
+.conteudo-dropdown{
+    display: none;
+    position: absolute;
+    margin-top: 1.2%;
+    min-width: 12vw;
+    color: white;
+    z-index: 4;
+}
+
+.conteudo-dropdown a{
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 5% 20%;
+    background-color: #B77FB4;
+    opacity: .8;
+    font-size: .9em;
+    z-index: 2;
+
+}
+
+.dropdown:hover .conteudo-dropdown{
+    display: block;
+}
+
+.conteudo-dropdown a{
+    color: white;
+}
+
+.conteudo-dropdown a:hover{
+    background-color: #98C9D4 ;
+}
+
+/* Configurações Slider */
+
+.config-slider{
+    height: 100vh;
+    z-index: 1;
+}
+
+.conteudo-slider{
+    text-align: center;
+    position: absolute;
+    color: white;
+    z-index: 4;
+    top: 58vh;
+    left: 30%;
+    letter-spacing: .2em;
+}
+
+.conteudo-slider h4{
+    margin-top: -4%;
+    font-family: 'Raleway', sans-serif;
+    font-size: .8em;
+}
+
+
+.conteudo-slider button{
+    padding: 3% 8%;
+}
+
+.slider-container{
+    overflow-y: unset;
+    scrollbar-width: none;
+}
+
+.imgs-slider{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#filtro{
+    width: 100%;
+    height: 100vh;
+    background-color: #B77FB4;
+    position: absolute;
+    opacity: 40%;
+    z-index: 3;
+}
+
+.slider-indicators{
+    display: none;
+}
+

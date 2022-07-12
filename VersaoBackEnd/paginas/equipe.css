@@ -1,0 +1,246 @@
+.conteudo-slider{
+    top: 62vh;
+    left: 25%;
+}
+
+/* Seção Clarissa */
+.img-circular{
+    border-radius: 50%;
+    width: 15vw;
+    height: 15vw;
+    overflow: hidden;
+    position: relative;
+}
+
+#foto-orientadora{
+    width: 100%;
+    position: absolute;
+}
+
+#apresentacao-clarissa h3, .coluna h1, .quadro h1, .textual h1{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #B77FB4;
+    text-align: center;
+}
+
+#apresentacao-clarissa h5, .coluna h2, .quadro h2, .quadro p, .textual h2{
+    font-family: 'Raleway', sans-serif;
+    font-size: .8em;
+    letter-spacing: 3px;
+    color: #7a7a7a;
+    text-align: center;
+    margin-top: -2vh;
+}
+
+
+
+#ap-textual{
+    width: 67%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1em;
+    position: relative;
+    top: -1vh;
+    left: 5%;
+    text-align: justify;
+    color: #7a7a7a;
+}
+
+#ap{
+    margin-left: 5%;
+}
+
+.secao-interna{
+    display: inline-block;
+}
+
+/* Ajuste Ícones Sociais */
+.imgs-sociais{
+    width: 2.5vw;
+    padding: 0 .2vw 0 0;
+    margin-top: 3%;
+}
+
+/*Apresentação Alunos */
+.titulos-secundarios-1{
+    font-size: 1em;
+    margin-top: -2vh;
+    color: #7a7a7a;
+    font-weight: 400;
+}
+
+.wrapper, .parceiros{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    margin: 5% 5%;
+}
+
+.fotos-alunas{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.coluna h1, .textual h1{
+    font-size: 1.3em;
+}
+
+.coluna h2, .textual h2{
+    font-weight: 400;
+    font-size: .9em;
+}
+
+.coluna p, .textual p{
+    color: #7a7a7a;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: .9em;
+    width: 98%;
+}
+
+.coluna button{
+    padding: 4% 12%;
+}
+
+
+/*Ajustes Labs Parceiros */
+.parceiros img{
+    width: 100%;
+    height: 30vh;;
+    border-radius: 3%;
+}
+
+.quadro{
+    background-color: white;
+    opacity: 85%;
+    width: 90%;
+    border-radius: 3%;
+    transition: transform 250ms linear;
+    min-height: 60vh;
+    position: relative;
+}
+
+.quadro:hover{
+    transform: scale(1.1);
+    opacity: 100%;
+}
+
+.quadro h1{
+    color: #B77FB4;
+    font-size: 1.1em;
+    text-align: left;
+    margin: 5% 0 0 7%;
+}
+
+.quadro h2{
+    color: #7a7a7a;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-align: left;
+    margin: 1% 0 2% 7%;
+}
+
+.quadro p{
+    letter-spacing: normal;
+    text-align: justify;
+    margin: 2% 7%;
+}
+
+.quadro button{
+    text-align: left;
+    margin: 5% 7%;
+    position: sticky;
+    top: 500vh;
+    padding: 2% 5%;
+}
+
+.quadro a{
+    text-decoration: none;
+}
+
+/* Novos ajustes pesquisadoras */
+
+.pesquisador{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    margin: 5% 5%;
+    background-color: #b77fb454;
+    padding: 5%;
+    border-radius: .5%;
+}
+
+.imgs-icones img{
+    width: 100%;
+}
+
+.textual h2, .textual h1{
+    text-align: left; 
+}
+
+.textual p{
+    text-align: justify;
+}
+
+.textual{
+    margin-left: 5%;
+}
+
+.textual a, .textual button{
+    text-decoration: none;
+    text-align: left;
+    display: inline ;
+}
+
+/* apresentação individual */
+
+#wrapper-ap{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    margin: 5% 5%;
+}
+
+#wrapper-ap img{
+    width: 100%;
+}
+
+#wrapper-ap p, .links-sociais, #wrapper-ap h2{
+    font-family: 'Raleway', sans-serif;
+    color: #7a7a7a;
+    font-size: 1em;
+}
+
+#wrapper p{
+    text-align: justify;
+}
+
+#wrapper-ap h1{
+    text-align: left;
+}
+
+#descricao{
+    text-align: justify;
+    margin: 0 8% 4% 0;
+}
+
+.links-sociais{
+    text-align: left;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.links-sociais a{
+    text-decoration: none;
+    color: #B77FB4;
+}
+
+#wrapper-ap h2{
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: -3% 0 3% 0;
+}
+
+#dv-ap{
+    color: #7a7a7a;
+    width: 90%;
+}

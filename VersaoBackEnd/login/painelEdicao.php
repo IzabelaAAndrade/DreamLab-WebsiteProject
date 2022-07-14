@@ -29,11 +29,11 @@
             <img src="../imgs/logo-branca.png" alt="Logo DREAM Lab Unifesp" id="logo-superior"/>
             <nav class="menu">
                 <ul>
-                    <li class="link-trad"><a href="index.html">HOME</a></li>
+                    <li class="link-trad"><a href="../index.html">HOME</a></li>
                     <li class="dropdown">
                         <a href="index.html" class="btn-dropdown">SOBRE</a>
                         <div class="conteudo-dropdown">
-                            <a href="paginas/equipe.html">EQUIPE</a>
+                            <a href="../paginas/equipe/equipe.php">EQUIPE</a>
                             <a href="">O LAB</a>
                         </div>
                     </li>

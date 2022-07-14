@@ -1,5 +1,6 @@
 <?php
     include('../../login/conexao.php');
+    session_start();
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -16,6 +17,7 @@
         <!-- Inclusão de Arquivos CSS -->
         <link rel="stylesheet" href="../../base.css">
         <link rel="stylesheet" href="equipe.css">
+        <link rel="stylesheet" href="../../login/login.css">
         <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.3/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
         
     </head>
@@ -144,6 +146,43 @@
                                     <h2><?php echo strtoupper($row_pesquisador['categoria']);?></h2>
                                     <p><?php echo $row_pesquisador['descricao'];?></p>
                                     <a href="apresentacao-individual.php?pesquisadora=<?php echo $row_pesquisador['id']?>"><button class="btn-escuro">SAIBA MAIS</button></a>
+                                    <?php
+                                        if($_SESSION['user']){
+                                            ?><a href="editaPesquisador.php?pesquisadora=<?php echo $row_pesquisador['id']?>"><button class="btn-escuro edicao">EDITAR DADOS</button></a><?php
+                                        }
+                                    
+                                    ?>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    ?>
+                </div>
+            </section>
+            <section class="section-clara">
+                <h1 class="titulos-primarios-1">Estagiários(as) & Alunos de IC</h1>
+                <h2 class="titulos-secundarios-1">Conheça nossas principais estudantes de graduação.</h2>
+                <div class="ap-pesquisadores">
+                    <?php
+                        $queryICs = "SELECT * FROM pesquisadores WHERE categoria='Estagiario(a)' OR categoria ='IC'";
+                        $resultadoQuery2 = mysqli_query($conexao, $queryICs);
+                        while($row_ics = mysqli_fetch_assoc($resultadoQuery2)){
+                            ?>
+                            <div class="pesquisador">
+                                <div class="imgs-icones">
+                                    <img src="../../login/manipulacoesbd/<?php echo $row_ics['caminho_img'];?>" class="fotos-alunas">
+                                </div>
+                                <div class="textual">
+                                    <h1><?php echo $row_ics['nome'];?></h1>
+                                    <h2><?php echo strtoupper($row_ics['categoria']);?></h2>
+                                    <p><?php echo $row_ics['descricao'];?></p>
+                                    <a href="apresentacao-individual.php?pesquisadora=<?php echo $row_ics['id']?>"><button class="btn-escuro">SAIBA MAIS</button></a>
+                                    <?php
+                                        if($_SESSION['user']){
+                                            ?><a href="editaPesquisador.php?pesquisadora=<?php echo $row_ics['id']?>"><button class="btn-escuro edicao">EDITAR DADOS</button></a><?php
+                                        }
+                                    
+                                    ?>
                                 </div>
                             </div>
                             <?php

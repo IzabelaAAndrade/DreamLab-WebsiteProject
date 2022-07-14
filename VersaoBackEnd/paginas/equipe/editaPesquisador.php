@@ -1,11 +1,8 @@
 <?php
+    include('../../login/conexao.php');
     session_start();
-    include('../verifica_login.php');
-
+    
 ?>
-
-
-
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -19,9 +16,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Raleway:wght@100;400&display=swap" rel="stylesheet">
         <!-- Inclusão de Arquivos CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.3/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
-        <link rel="stylesheet" href="../login.css">
         <link rel="stylesheet" href="../../base.css">
+        <link rel="stylesheet" href="../../login/login.css">
+        <link rel="stylesheet" href="equipe.css">
+        <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.3/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
         
     </head>
     <body>
@@ -33,7 +31,7 @@
                     <li class="dropdown">
                         <a href="index.html" class="btn-dropdown">SOBRE</a>
                         <div class="conteudo-dropdown">
-                            <a href="../../paginas/equipe/equipe.php">EQUIPE</a>
+                            <a href="equipe.php">EQUIPE</a>
                             <a href="">O LAB</a>
                         </div>
                     </li>
@@ -52,13 +50,16 @@
             </nav>
         </header>
         <main>
-           <section id="infos-login">
-                <h2 class="campos-log">Olá, <?php echo $_SESSION['user']?></h2>
-                <h2 class="campos-log"><a href="../logout.php">Logout</a></h1>
-           </section>
-           <h1 class="titulos-primarios-1 pags-log">Acrescentar Novo Pesquisador</h1>
-        
-           <form method="POST" action="config_adc_pesquisador.php" class="form-central" enctype="multipart/form-data">
+        <section class="section-clara">
+            <?php
+                $pesquisadorSelecionado = $_GET['pesquisadora'];
+                $queryPesquisadorIndv = "SELECT * FROM pesquisadores WHERE id={$pesquisadorSelecionado}";
+                $resultadoQuery = mysqli_query($conexao, $queryPesquisadorIndv);
+                $dados = mysqli_fetch_assoc($resultadoQuery);
+            ?>
+            
+            <h1 class="titulos-primarios-1 pags-log">Editar Dados do Pesquisador</h1>
+            <form method="POST" action="../../login/manipulacoesbd/config_edita_pesquisadores.php" class="form-central" enctype="multipart/form-data">
                 <?php 
                     if(isset($_SESSION['falha_extensao'])):
                 ?>
@@ -87,15 +88,15 @@
                 ?>
                 
                 <?php 
-                    if(isset($_SESSION['adicao_sucesso'])):
+                    if(isset($_SESSION['edicao_sucesso'])):
                 ?>
-                <h3>Pesquisador Cadastrado com Sucesso!</h3>
+                <h3>Dados do Pesquisador Editados com Sucesso!</h3>
                 <?php
                     endif;
-                    unset($_SESSION['adicao_sucesso']);
+                    unset($_SESSION['edicao_sucesso']);
                 ?>
                 <label for="user">Nome do Pesquisador:</label>
-                <input type="text" name="nome" placeholder="Quem é esse pesquisador? " id="nome" required>
+                <input type="text" name="nome" value="<?php echo $dados['nome']; ?>" id="nome" required>
                 <label for="categoria"> Selecione a categoria que melhor descreve o pesquisador:</label>
                 <select name="categoria" id="categoria" required>
                     <option value="IC">Aluno de IC</option>
@@ -104,19 +105,20 @@
                     <option value="Doutorando(a)">Doutorando(a)</option>
                 </select>
                 <label for="lattes">Url Lattes: </label>
-                <input type="text" name="lattes" placeholder="Esse pesquisador tem currículo lattes? Qual o link?" id="lattes" required>
+                <input type="text" name="lattes" value="<?php echo $dados['lattes']; ?>" id="lattes" required>
                 <label for="user">Url Linkedin: </label>
-                <input type="text" name="linkedin" placeholder="Esse pesquisador tem Linkedin? Qual o link?" id="linkedin" required>
+                <input type="text" name="linkedin" value="<?php echo $dados['linkedin']; ?>" id="linkedin" required>
                 <label for="descricao">Descrição:</label>
-                <textarea rows="10" cols="30" maxlength="2000" name="descricao" placeholder="Um pouco sobre você :)" id="descricao" required></textarea>
+                <textarea rows="10" cols="30" maxlength="2000" name="descricao" id="descricao" required><?php echo $dados['descricao']; ?></textarea>
                 <label for="publicacoes">Publicações:</label>
-                <textarea rows="10" cols="30" maxlength="2000" name="publicacoes" placeholder="Referências para artigos publicados ou menções na mídia." id="publicacoes" required></textarea>
-                <label for="img-pesquisador">Foto de Perfil</label>
+                <textarea rows="10" cols="30" maxlength="2000" name="publicacoes" id="publicacoes" required><?php echo $dados['publicacoes'];?></textarea>
+                <label for="img-pesquisador">Foto de Perfil: Adicionar Nova</label>
                 <input type="file" name="img-pesquisador" id="img-pesquisador">
+                <input id="dado-id" name="dado_id" value="<?php echo $dados['id']; ?>">
                 <input type="submit" class="btn-escuro">
-           </form>
+            </form>
+            </section>
         </main>
-
 
         <footer>
             <img src="../../imgs/logo-branca.png" alt="Logo DREAM Lab Unifesp" id="logo-inferior"/>

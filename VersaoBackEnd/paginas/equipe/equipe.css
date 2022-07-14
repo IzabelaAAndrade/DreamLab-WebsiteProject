@@ -255,3 +255,16 @@
     text-align: justify;
 
 }
+
+.edicao{
+    background-color: #98C9D4;
+    margin-left: 2%;
+}
+
+.edicao:hover{
+    background-color: #B77FB4;
+}
+
+#dado-id{
+    display: none;
+}

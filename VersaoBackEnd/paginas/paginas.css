@@ -1,0 +1,8 @@
+.superior-media{
+    width: 100%;
+    height: 40vh;
+    background-image: url('../imgs/cultura.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

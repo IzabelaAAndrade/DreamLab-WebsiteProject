@@ -52,7 +52,7 @@
     height: 1%;
 }
 
-#descricao, #img-pesquisador, #publicacoes{
+#descricao, #img-pesquisador, #publicacoes, #autores{
     width: 107%;
     font-family: 'Raleway', sans-serif;
 }

@@ -314,3 +314,10 @@ footer p{
     display: none;
 }
 
+.t-publicacoes{
+    margin-top: 0;
+}
+
+#linkp{
+    text-decoration: none;
+}

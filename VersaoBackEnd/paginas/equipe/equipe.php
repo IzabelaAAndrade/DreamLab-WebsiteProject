@@ -30,8 +30,8 @@
                     <li class="dropdown">
                         <a href="index.html" class="btn-dropdown">SOBRE</a>
                         <div class="conteudo-dropdown">
-                            <a href="">EQUIPE</a>
-                            <a href="">O LAB</a>
+                            <a href="equipe.php">EQUIPE</a>
+                            <a href="../sobreLab.php">O LAB</a>
                         </div>
                     </li>
                     <li class="dropdown">

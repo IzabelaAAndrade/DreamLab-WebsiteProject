@@ -1,7 +1,7 @@
 <?php
     session_start();
     include('../verifica_login.php');
-
+    include('../conexao.php');
 ?>
 
 
@@ -22,6 +22,7 @@
         <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.3/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
         <link rel="stylesheet" href="../login.css">
         <link rel="stylesheet" href="../../base.css">
+        <link rel="stylesheet" href="../../paginas/equipe/equipe.css">
         
     </head>
     <body>
@@ -29,11 +30,11 @@
             <img src="../../imgs/logo-branca.png" alt="Logo DREAM Lab Unifesp" id="logo-superior"/>
             <nav class="menu">
                 <ul>
-                    <li class="link-trad"><a href="../../index.html">HOME</a></li>
+                    <li class="link-trad"><a href="index.html">HOME</a></li>
                     <li class="dropdown">
                         <a href="index.html" class="btn-dropdown">SOBRE</a>
                         <div class="conteudo-dropdown">
-                            <a href="../../paginas/equipe/equipe.php">EQUIPE</a>
+                            <a href="../../paginas/equipe.html">EQUIPE</a>
                             <a href="../../paginas/sobreLab.php">O LAB</a>
                         </div>
                     </li>
@@ -54,60 +55,22 @@
         <main>
            <section id="infos-login">
                 <h2 class="campos-log">Olá, <?php echo $_SESSION['user']?></h2>
-                <h2 class="campos-log"><a href="../logout.php">Logout</a></h1>
+                <h2 class="campos-log"><a href="logout.php">Logout</a></h1>
            </section>
-           <h1 class="titulos-primarios-1 pags-log">Acrescentar Nova Publicação</h1>
-        
-           <form method="POST" action="config_adc_publicacao.php" class="form-central" enctype="multipart/form-data">
-                <?php 
-                    if(isset($_SESSION['falha_extensao'])):
-                ?>
-                <h3>Extensão de arquivo inválida para a foto de perfil.</h3>
-                <?php
-                    endif;
-                    unset($_SESSION['falha_extensao']);
-                ?>
+           <section class="section-clara">
+            <?php
+                $queryConteudo = "SELECT texto FROM conteudos WHERE id='1' AND categoria='decricaoSobre' ";
+                $resultadoQuery = mysqli_query($conexao, $queryConteudo);
+                $dados = mysqli_fetch_assoc($resultadoQuery);
+            ?>
+                <h1 class="titulos-primarios-1">Editar Texto Sobre</h1>
+                <form method="POST" action="editaTexto.php" class="form-central">
+                    <label for="texto">Conteúdo do Texto:</label>
+                    <textarea rows="10" cols="30" maxlength="2000" name="texto" id="texto" required><?php echo $dados['texto'];?></textarea>
+                    <input type="submit" class="btn-escuro">
+                </form>
 
-                <?php 
-                    if(isset($_SESSION['erro_salvar'])):
-                ?>
-                <h3>Problema no armazenamento da foto.</h3>
-                <?php
-                    endif;
-                    unset($_SESSION['erro_salvar']);
-                ?>
-                
-                <?php 
-                    if(isset($_SESSION['falha_arquivo'])):
-                ?>
-                <h3>Problema no envio da foto. Tente novamente.</h3>
-                <?php
-                    endif;
-                    unset($_SESSION['falha_arquivo']);
-                ?>
-                
-                <?php 
-                    if(isset($_SESSION['adicao_sucesso'])):
-                ?>
-                <h3>Publicacao Cadastrada com Sucesso!</h3>
-                <?php
-                    endif;
-                    unset($_SESSION['adicao_sucesso']);
-                ?>
-                <label for="titulo">Título da Publicação:</label>
-                <input type="text" name="titulo" placeholder="" id="titulo" required>
-                <label for="revista">Veículo de Publicação (e.g. revista):</label>
-                <input type="text" name="revista" placeholder="" id="revista" required>
-                <label for="autores">Autores:</label>
-                <textarea rows="10" cols="30" maxlength="2000" name="autores" placeholder="" id="autores" required></textarea>
-                <label for="dtPublicacao">Data de Publicação: </label>
-                <input type="date" name="dtPublicacao" placeholder="" id="dtPublicacao" required>
-                <label for="urlArtigo">Url da Publicação na Web: </label>
-                <input type="text" name="urlArtigo" placeholder="" id="urlArtigo" required>
-                <label for="img-publicacao">Foto de Referência</label>
-                <input type="file" name="img-publicacao" id="img-publicacao">
-                <input type="submit" class="btn-escuro">
-           </form>
+            </section>
         </main>
 
 

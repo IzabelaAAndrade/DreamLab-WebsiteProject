@@ -61,6 +61,11 @@
                     $resFormatado = mysqli_fetch_assoc($resQuery);
                 ?>
                 <p class="paragrafos-primarios-1"><?php echo $resFormatado['texto'];?></p>
+                <?php
+                    if($_SESSION['user']){
+                        ?><a id="linkp" href="../login/manipulacoesbd/editaSobre.php"><button class="btn-escuro">EDITAR TEXTO</button></a><?php
+                    }
+                ?>
                 
             </section>
 
@@ -71,27 +76,41 @@
 
             <section class="section-clara">
                 <h1 class="titulos-primarios-1" id="nome">Principais Publicações</h1>
-                <?php
-                    $queryPublicacoes = "SELECT * FROM publicacoes";
-                    $resPublicaoes = mysqli_query($conexao, $queryPublicacoes);
-                    while($row_publicacoes = mysqli_fetch_assoc($resPublicaoes)){
-                ?>
-                <div class="pesquisador">
-                    <div class="imgs-icones">
-                        <img src="../login/manipulacoesbd/<?php echo $row_publicacoes['caminho_img'];?>" class="fotos-alunas">
+                <div class="ap-pesquisadores">
+                    <?php
+
+                        function cmp($a, $b){
+                            return $a['dt_publicacao'] < $b['dt_publicacao'];
+                        }
+
+                        $queryPublicacoes = "SELECT * FROM publicacoes";
+                        mysqli_set_charset($conexao, "utf8");
+                        $resPublicaoes = mysqli_query($conexao, $queryPublicacoes);
+                        $arrayResultados = array();
+                        while($linha = mysqli_fetch_assoc($resPublicaoes)){
+                            array_push($arrayResultados, $linha);
+                        }
+                        $arrayOrdenado = usort($arrayResultados, 'cmp');
+                        for($i = 0; $i < sizeof($arrayResultados); $i++) {
+                            $row_publicacoes = $arrayResultados[$i];
+                    ?>
+                    <div class="pesquisador">
+                        <div class="imgs-icones imgs-publ">
+                            <img src="../login/manipulacoesbd/<?php echo $row_publicacoes['caminho_img'];?>" class="fotos-alunas ajuste-publ">
+                        </div>
+                        <div class="textual">
+                            <h1 class="t-publicacoes"><?php echo $row_publicacoes['titulo'];?></h1>
+                                <h2><?php 
+                                $dtFormatada = date("M, Y", strtotime($row_publicacoes['dt_publicacao']));
+                                echo strtoupper($dtFormatada);?></h2>
+                                <p><?php echo $row_publicacoes['autores'];?></p>
+                                <a href="<?php echo $row_publicacoes['url_publicacao']?>"><button class="btn-escuro">ACESSAR PUBLICAÇÃO</button></a>
+                        </div>
                     </div>
-                    <div class="textual">
-                        <h1 class="t-publicacoes"><?php echo $row_publicacoes['titulo'];?></h1>
-                            <h2><?php 
-                            $dtFormatada = date("M, Y", strtotime($row_publicacoes['dt_publicacao']));
-                            echo strtoupper($dtFormatada);?></h2>
-                             <p><?php echo $row_publicacoes['autores'];?></p>
-                             <a href="<?php echo $row_publicacoes['url_publicacao']?>"><button class="btn-escuro">ACESSAR PUBLICAÇÃO</button></a>
-                             <?php
-                                
-                            }  
-                            ?>
-                    </div>
+                    <?php
+                                    
+                                }  
+                                ?>
                 </div>
 
                 <?php

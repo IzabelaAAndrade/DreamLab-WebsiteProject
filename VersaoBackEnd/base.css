@@ -321,3 +321,10 @@ footer p{
 #linkp{
     text-decoration: none;
 }
+.imgs-publ{
+    height: 30vh;
+}
+
+.ajuste-publ{
+    max-height: 100%;
+}

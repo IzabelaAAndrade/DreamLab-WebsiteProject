@@ -1,11 +1,7 @@
 <?php
+    include('../../login/conexao.php');
     session_start();
-    include('../verifica_login.php');
-
 ?>
-
-
-
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -19,9 +15,11 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Raleway:wght@100;400&display=swap" rel="stylesheet">
         <!-- Inclusão de Arquivos CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.3/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
-        <link rel="stylesheet" href="../login.css">
         <link rel="stylesheet" href="../../base.css">
+        <link rel="stylesheet" href="../equipe/equipe.css">
+        <link rel="stylesheet" href="../../login/login.css">
+        <link rel="stylesheet" href="../paginas.css">
+        <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.3/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
         
     </head>
     <body>
@@ -53,8 +51,8 @@
                     <li class="dropdown">
                         <a href="index.php" class="btn-dropdown">SOBRE</a>
                         <div class="conteudo-dropdown">
-                            <a href="../../paginas/equipe/equipe.php">EQUIPE</a>
-                            <a href="../../paginas/sobreLab.php">O LAB</a>
+                            <a href="../equipe/equipe.php">EQUIPE</a>
+                            <a href="../sobreLab.php">O LAB</a>
                         </div>
                     </li>
                     <li class="dropdown">
@@ -64,7 +62,7 @@
                             <a href="">TRATAMENTOS</a>
                         </div>
                     </li>
-                    <li class="link-trad"><a href="index.php">FERRAMENTAS</a></li>
+                    <li class="link-trad"><a href="ferramentas.php">FERRAMENTAS</a></li>
                     <li class="link-trad"><a href="index.php">MENÇÕES</a></li>
                     <li class="link-trad"><a href="index.php">GALERIA</a></li>
                     <li class="link-trad"><a href="index.php">CONTATO</a></li>
@@ -72,62 +70,30 @@
             </nav>
         </header>
         <main>
-           <section id="infos-login">
-                <h2 class="campos-log">Olá, <?php echo $_SESSION['user']?></h2>
-                <h2 class="campos-log"><a href="../logout.php">Logout</a></h1>
-           </section>
-           <h1 class="titulos-primarios-1 pags-log">Acrescentar Nova Publicação</h1>
-        
-           <form method="POST" action="config_adc_publicacao.php" class="form-central" enctype="multipart/form-data">
-                <?php 
-                    if(isset($_SESSION['falha_extensao'])):
-                ?>
-                <h3>Extensão de arquivo inválida para a foto de perfil.</h3>
-                <?php
-                    endif;
-                    unset($_SESSION['falha_extensao']);
-                ?>
-
-                <?php 
-                    if(isset($_SESSION['erro_salvar'])):
-                ?>
-                <h3>Problema no armazenamento da foto.</h3>
-                <?php
-                    endif;
-                    unset($_SESSION['erro_salvar']);
-                ?>
+            <div id="superior-media2">
+                <!-- Imagem média superior, adição no CSS -->
+            </div>
+            <section class="section-clara">
+                <h1 class="titulos-primarios-1">Ferramentas</h1>
+                <h2 class="titulos-secundarios-1">Cálculos repetitivos ao realizar experimentos no laboratório? 
+                    <br>Acesse nossas calculadoras especializadas e encontre os valores para seus projetos de maneira rápida e eficiente.
+                </h2>
+            </section>
+            <section class="section-escura">
+                <h1 class="titulos-primarios-2">Calculadora de Plaqueamento</h1>
+                <h2 class="titulos-secundarios-2">Descubra quantos mLs de mistura com células deverá adicionar em cada poço, tal como 
+                    o quanto será necessário completar com meio.
+                </h2>
+                <form class="form-js-claro">
+                </form>
+            </section>
+            <section class="section-clara">
+                <h1 class="titulos-primarios-1">Conversões Entre Placas</h1>
+                <h2 class="titulos-secundarios-1">Precisa saber qual a quantidade de células necessárias em uma placa de um
+                    número diferente de poços? Deixa com a gente :)
+                </h2>
+            </section>
                 
-                <?php 
-                    if(isset($_SESSION['falha_arquivo'])):
-                ?>
-                <h3>Problema no envio da foto. Tente novamente.</h3>
-                <?php
-                    endif;
-                    unset($_SESSION['falha_arquivo']);
-                ?>
-                
-                <?php 
-                    if(isset($_SESSION['adicao_sucesso'])):
-                ?>
-                <h3>Publicacao Cadastrada com Sucesso!</h3>
-                <?php
-                    endif;
-                    unset($_SESSION['adicao_sucesso']);
-                ?>
-                <label for="titulo">Título da Publicação:</label>
-                <input type="text" name="titulo" placeholder="" id="titulo" required>
-                <label for="revista">Veículo de Publicação (e.g. revista):</label>
-                <input type="text" name="revista" placeholder="" id="revista" required>
-                <label for="autores">Autores:</label>
-                <textarea rows="10" cols="30" maxlength="2000" name="autores" placeholder="" id="autores" required></textarea>
-                <label for="dtPublicacao">Data de Publicação: </label>
-                <input type="date" name="dtPublicacao" placeholder="" id="dtPublicacao" required>
-                <label for="urlArtigo">Url da Publicação na Web: </label>
-                <input type="text" name="urlArtigo" placeholder="" id="urlArtigo" required>
-                <label for="img-publicacao">Foto de Referência</label>
-                <input type="file" name="img-publicacao" id="img-publicacao">
-                <input type="submit" class="btn-escuro">
-           </form>
         </main>
 
 

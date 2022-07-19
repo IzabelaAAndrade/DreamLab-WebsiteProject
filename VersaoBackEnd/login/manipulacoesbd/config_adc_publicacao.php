@@ -14,7 +14,7 @@
     $caminhoArquivo = "imgs-publicacoes/padrao-publi.jpg";
 
     //verificar arquivo de img
-    if(isset($_FILES['img-publicacao']) & isset($_POST['img-publicacao'])){
+    if(isset($_FILES['img-publicacao']) || isset($_POST['img-publicacao'])){
         $arquivoImg = $_FILES['img-publicacao'];
 
         

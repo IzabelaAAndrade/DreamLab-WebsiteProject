@@ -24,27 +24,47 @@
     <body>
         <header>
             <img src="../imgs/logo-branca.png" alt="Logo DREAM Lab Unifesp" id="logo-superior"/>
+            <?php
+                if(@$_SESSION['user']){ 
+            ?>
+                <section id="infos-login" class="ajuste-login">
+                    <h2 class="campos-log">Olá, <?php echo $_SESSION['user']?></h2>
+                    <h2 class="campos-log"><a href="login/logout.php">Logout</a></h1>
+                </section>
+            <?php 
+            
+                }else{
+                ?>
+                    <section id="infos-login" class="ajuste-login">
+                        <h2 class="campos-log">Bem vinde!</h2>
+                        <h2 class="campos-log"><a href="login/indexLogin.php">Efetuar Login</a></h1>
+                    </section>
+
+                <?php
+                }
+            
+            ?>
             <nav class="menu">
                 <ul>
-                    <li class="link-trad"><a href="../index.html">HOME</a></li>
+                    <li class="link-trad"><a href="../index.php">HOME</a></li>
                     <li class="dropdown">
-                        <a href="index.html" class="btn-dropdown">SOBRE</a>
+                        <a href="index.php" class="btn-dropdown">SOBRE</a>
                         <div class="conteudo-dropdown">
                             <a href="equipe/equipe.php">EQUIPE</a>
                             <a href="sobreLab.php">O LAB</a>
                         </div>
                     </li>
                     <li class="dropdown">
-                        <a href="index.html" class="btn-dropdown">PESQUISA</a>
+                        <a href="index.php" class="btn-dropdown">PESQUISA</a>
                         <div class="conteudo-dropdown">
                             <a href="">BIOTÉRIO DE CÉLULAS</a>
                             <a href="">TRATAMENTOS</a>
                         </div>
                     </li>
-                    <li class="link-trad"><a href="index.html">FERRAMENTAS</a></li>
-                    <li class="link-trad"><a href="index.html">MENÇÕES</a></li>
-                    <li class="link-trad"><a href="index.html">GALERIA</a></li>
-                    <li class="link-trad"><a href="index.html">CONTATO</a></li>
+                    <li class="link-trad"><a href="index.php">FERRAMENTAS</a></li>
+                    <li class="link-trad"><a href="index.php">MENÇÕES</a></li>
+                    <li class="link-trad"><a href="index.php">GALERIA</a></li>
+                    <li class="link-trad"><a href="index.php">CONTATO</a></li>
                 </ul>
             </nav>
         </header>
@@ -62,7 +82,7 @@
                 ?>
                 <p class="paragrafos-primarios-1"><?php echo $resFormatado['texto'];?></p>
                 <?php
-                    if($_SESSION['user']){
+                    if(@$_SESSION['user']){
                         ?><a id="linkp" href="../login/manipulacoesbd/editaSobre.php"><button class="btn-escuro">EDITAR TEXTO</button></a><?php
                     }
                 ?>
@@ -114,7 +134,7 @@
                 </div>
 
                 <?php
-                    if($_SESSION['user']){
+                    if(@$_SESSION['user']){
                         ?><a id="linkp" href="../login/manipulacoesbd/adicionaPublicacao.php"><button class="btn-escuro">ADICIONAR NOVA PUBLICAÇÃO</button></a><?php
                     }
                 ?>

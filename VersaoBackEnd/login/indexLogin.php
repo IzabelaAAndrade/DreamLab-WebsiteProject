@@ -24,25 +24,25 @@
             <img src="../imgs/logo-branca.png" alt="Logo DREAM Lab Unifesp" id="logo-superior"/>
             <nav class="menu">
                 <ul>
-                    <li class="link-trad"><a href="index.html">HOME</a></li>
+                    <li class="link-trad"><a href="index.php">HOME</a></li>
                     <li class="dropdown">
-                        <a href="index.html" class="btn-dropdown">SOBRE</a>
+                        <a href="index.php" class="btn-dropdown">SOBRE</a>
                         <div class="conteudo-dropdown">
                             <a href="paginas/equipe.html">EQUIPE</a>
                             <a href="">O LAB</a>
                         </div>
                     </li>
                     <li class="dropdown">
-                        <a href="index.html" class="btn-dropdown">PESQUISA</a>
+                        <a href="index.php" class="btn-dropdown">PESQUISA</a>
                         <div class="conteudo-dropdown">
                             <a href="">BIOTÉRIO DE CÉLULAS</a>
                             <a href="">TRATAMENTOS</a>
                         </div>
                     </li>
-                    <li class="link-trad"><a href="index.html">FERRAMENTAS</a></li>
-                    <li class="link-trad"><a href="index.html">MENÇÕES</a></li>
-                    <li class="link-trad"><a href="index.html">GALERIA</a></li>
-                    <li class="link-trad"><a href="index.html">CONTATO</a></li>
+                    <li class="link-trad"><a href="index.php">FERRAMENTAS</a></li>
+                    <li class="link-trad"><a href="index.php">MENÇÕES</a></li>
+                    <li class="link-trad"><a href="index.php">GALERIA</a></li>
+                    <li class="link-trad"><a href="index.php">CONTATO</a></li>
                 </ul>
             </nav>
         </header>

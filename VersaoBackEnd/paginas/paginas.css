@@ -1,7 +1,14 @@
 .superior-media{
+    background-image: url('../imgs/cultura.jpg');
+}
+
+#superior-media2{
+    background-image: url('../imgs/calc2.jpg');
+}
+
+.superior-media, #superior-media2{
     width: 100%;
     height: 40vh;
-    background-image: url('../imgs/cultura.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

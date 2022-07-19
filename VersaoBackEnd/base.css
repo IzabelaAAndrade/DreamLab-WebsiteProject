@@ -82,7 +82,7 @@ footer p{
     padding: 5% 10%;
 }
 
-.titulos-primarios-1, .paragrafos-primarios-1, .titulos-secundarios-1{
+.titulos-primarios-1, .paragrafos-primarios-1, .titulos-secundarios-1, .titulos-secundarios-2{
     text-align: center;
 }
 
@@ -96,12 +96,18 @@ footer p{
     font-weight: 700;
 }
 
-.paragrafos-primarios-1, .btn-escuro, .subtitulo-claro, #comunidade-valores p, .titulos-secundarios-1{
+.paragrafos-primarios-1, .btn-escuro, .subtitulo-claro, #comunidade-valores p, .titulos-secundarios-1, .titulos-secundarios-2{
     font-family: 'Raleway', sans-serif;
 }
 
 .paragrafos-primarios-1{
     font-size: 1em;
+}
+
+.titulos-secundarios-2{
+    color: white;
+    font-size: 1em;
+    font-weight: 400;
 }
 
 /* Configuração geral dos botões */
@@ -327,4 +333,21 @@ footer p{
 
 .ajuste-publ{
     max-height: 100%;
+}
+
+.ajuste-login{
+    position: absolute;
+    left: 15%;
+    top: 5%;
+    color: white;
+    font-size: .7em;
+}
+
+.ajuste-login a{
+    text-decoration: none;
+    color: #B77FB4;
+}
+
+#superior-media2{
+
 }
